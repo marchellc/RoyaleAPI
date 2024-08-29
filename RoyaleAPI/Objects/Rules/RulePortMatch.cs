@@ -11,7 +11,7 @@ namespace RoyaleAPI.Objects.Rules
     public class RulePortMatch
     {
         [JsonPropertyName("match_type")]
-        private string matchType { get; set; } = "eq";
+        public string matchType { get; set; } = "eq";
 
         /// <summary>
         /// Gets the match type.

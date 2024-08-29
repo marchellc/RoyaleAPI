@@ -9,10 +9,10 @@ namespace RoyaleAPI.Objects.Analytics
         private AnalyticsFrame[] _frames;
 
         [JsonPropertyName("interval")]
-        private int intervalMinutes { get; set; }
+        public int intervalMinutes { get; set; }
 
         [JsonPropertyName("traffic")]
-        private long[][] stupidFrames { get; set; }
+        public long[][] unparsedFrames { get; set; }
 
         [JsonIgnore]
         public TimeSpan Interval
@@ -30,9 +30,9 @@ namespace RoyaleAPI.Objects.Analytics
                 {
                     var frames = new List<AnalyticsFrame>();
 
-                    for (int i = 0; i < stupidFrames.Length; i++)
+                    for (int i = 0; i < unparsedFrames.Length; i++)
                     {
-                        var stupidFrame = stupidFrames[i];
+                        var stupidFrame = unparsedFrames[i];
 
                         if (stupidFrame is null || stupidFrame.Length != 3)
                             continue;

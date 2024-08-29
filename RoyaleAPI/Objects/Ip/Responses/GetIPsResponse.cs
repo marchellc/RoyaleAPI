@@ -7,13 +7,10 @@ namespace RoyaleAPI.Objects.Ip.Responses
         [JsonPropertyName("ips")]
         public IpAddress[] IPs { get; set; }
 
-        [JsonPropertyName("total")]
+        [JsonPropertyName("count")]
         public int Total { get; set; }
 
         [JsonPropertyName("pages")]
         public int Pages { get; set; }
-
-        [JsonPropertyName("limit")]
-        public int Limit { get; set; }
     }
 }

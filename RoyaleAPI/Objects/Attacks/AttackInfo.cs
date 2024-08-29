@@ -8,11 +8,17 @@ namespace RoyaleAPI.Objects.Attacks
 {
     public class AttackInfo
     {
+        [JsonPropertyName("start_time")]
+        public string startString { get; set; }
+
+        [JsonPropertyName("event_time")]
+        public string eventString { get; set; }
+
         [JsonPropertyName("duration")]
-        private int durationSeconds { get; set; }
+        public int durationSeconds { get; set; }
 
         [JsonPropertyName("status")]
-        private string attackStatus { get; set; }
+        public string attackStatus { get; set; }
 
         [JsonPropertyName("volume")]
         public int Dropped { get; set; }
@@ -32,11 +38,11 @@ namespace RoyaleAPI.Objects.Attacks
         [JsonPropertyName("dest")]
         public string Destination { get; set; }
 
-        [JsonPropertyName("start_time")]
-        public DateTime StartTime { get; set; }
+        [JsonIgnore]
+        public DateTime StartTime => StupidDateTimeFormatParser.ParseDateTime(startString);
 
-        [JsonPropertyName("event_time")]
-        public DateTime EventTime { get; set; }
+        [JsonIgnore]
+        public DateTime EventTime => StupidDateTimeFormatParser.ParseDateTime(eventString);
 
         [JsonIgnore]
         public AttackStatus Status

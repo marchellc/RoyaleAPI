@@ -219,7 +219,12 @@ namespace RoyaleAPI
                     response.EnsureSuccessStatusCode();
 
                     var json = await response.Content.ReadAsStringAsync();
+
+                    InternalLog($"{method.Method} {url}\n{json}");
+
                     var msg = JsonSerializer.Deserialize<BaseResponse>(json);
+
+                    InternalLog($"IsSuccess={msg.IsSuccess} Message={msg.Message} Data=\n{msg.Data.ToJsonString()}");
 
                     if (!msg.IsSuccess)
                         throw new Exception($"The API has returned an error: {msg.Message}");

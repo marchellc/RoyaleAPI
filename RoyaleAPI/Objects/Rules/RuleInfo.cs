@@ -13,16 +13,16 @@ namespace RoyaleAPI.Objects.Rules
     public class RuleInfo
     {
         [JsonPropertyName("action")]
-        private string action { get; set; }
+        public string action { get; set; }
 
         [JsonPropertyName("src_port_type")]
-        private string srcPortMatch { get; set; }
+        public string srcPortMatch { get; set; }
 
         [JsonPropertyName("dst_port_type")]
-        private string dstPostMatch { get; set; }
+        public string dstPostMatch { get; set; }
 
         [JsonPropertyName("protocol")]
-        private int protocol { get; set; }
+        public int protocol { get; set; }
 
         /// <summary>
         /// Gets the rule's ID.

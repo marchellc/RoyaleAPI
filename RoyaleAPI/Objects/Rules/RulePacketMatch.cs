@@ -11,10 +11,10 @@ namespace RoyaleAPI.Objects.Rules
     public class RulePacketMatch
     {
         [JsonPropertyName("match")]
-        private string matchPart { get; set; } = "ack";
+        public string matchPart { get; set; } = "ack";
 
         [JsonPropertyName("match_type")]
-        private string matchType { get; set; } = "eq";
+        public string matchType { get; set; } = "eq";
 
         /// <summary>
         /// Gets or sets the packet matching part.
